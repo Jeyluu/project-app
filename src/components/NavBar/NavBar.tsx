@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <nav>
       <ul>
-        <a href="">
+        <a href="/">
           <li>Project List</li>
         </a>
       </ul>
