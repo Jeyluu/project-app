@@ -15,10 +15,16 @@
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.664);
 }
+
+#stateDiv {
+  display: flex;
+  align-items: center;
+}
 #stateIndication {
   display: block;
   content: ' ';
+  margin-right: 20px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
 }
