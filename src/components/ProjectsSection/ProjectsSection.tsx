@@ -4,54 +4,61 @@ import logo from '../../Assets/logo.svg'
 import './ProjectsSection.css'
 
 interface ProjectsSectionI {
-  projects: ProjectsI[]
+  projects: ProjectsI
+  isFocused: boolean
+  onClick: () => void
 }
 
 function ProjectSection(props: ProjectsSectionI) {
-  const { projects } = props
+  const { projects, isFocused, onClick } = props
 
   const dataCard = useMemo(() => {
     return (
       <>
-        {projects.map((value, index) => {
-          return (
-            <div id="cardBorder">
-              <img
-                src={value.img === '' ? logo : value.img}
-                alt={`${value.img}`}
-              />
-              <h2>{value.projectName}</h2>
-              <p>{value.description}</p>
-              <div id="stateDiv">
-                <span
-                  id="stateIndication"
-                  style={{
-                    backgroundColor:
-                      value.state === 1
-                        ? 'orange'
-                        : value.state === 2
-                        ? 'green'
-                        : 'red',
-                  }}
-                ></span>
-                <h3>
-                  {value.state === 1
-                    ? 'In Progress'
-                    : value.state === 2
-                    ? 'Done'
-                    : 'To be Done'}
-                </h3>
-              </div>
-            </div>
-          )
-        })}
+        <div
+          id="cardBorder"
+          style={{ backgroundColor: isFocused ? 'chartreuse' : 'black' }}
+          onClick={onClick}
+        >
+          <img
+            src={projects.img === '' ? logo : projects.img}
+            alt={`${projects.img}`}
+          />
+          <h2>{projects.projectName}</h2>
+          <p>{projects.description}</p>
+          <div id="stateDiv">
+            <span
+              id="stateIndication"
+              style={{
+                backgroundColor:
+                  projects.state === 1
+                    ? 'orange'
+                    : projects.state === 2
+                    ? 'green'
+                    : 'red',
+              }}
+            ></span>
+            <h3>
+              {projects.state === 1
+                ? 'In Progress'
+                : projects.state === 2
+                ? 'Done'
+                : 'To be Done'}
+            </h3>
+          </div>
+        </div>
       </>
     )
-  }, [projects])
+  }, [
+    isFocused,
+    projects.description,
+    projects.img,
+    projects.projectName,
+    projects.state,
+  ])
 
   return (
     <section id="ProjectContainer">
-      <h1>Here are different project I worked On</h1>
       <div id="cardContainer">{dataCard}</div>
     </section>
   )
