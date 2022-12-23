@@ -1,19 +1,45 @@
-#ProjectContainer {
+@keyframes card-animation-down {
+  from {
+    width: 30%;
+    top: -20px;
+  }
+  to {
+    width: 20%;
+  }
+}
+.card {
+  width: 20%;
+  max-height: 400px;
   margin: 10px;
-}
-
-#cardContainer {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-#cardBorder {
-  width: 30%;
-  margin: 10px 0;
   padding: 10px;
   border-radius: 20px;
-  
+  background-color: #00000070;
+  animation: card-animation-down 100ms linear;
+}
+
+#notexisting {
+  color: #00000070;
+}
+
+@keyframes card-animation-up {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 30%;
+    top: -20px;
+  }
+}
+
+.card-focus {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #000000;
+  position: absolute;
+  top: -20px;
+  animation: card-animation-up 500ms linear;
 }
 
 #stateDiv {

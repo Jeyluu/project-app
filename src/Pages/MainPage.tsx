@@ -2,6 +2,7 @@ import { memo, useCallback, useState } from 'react'
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import { useProjects } from '../Hooks/useProjects'
 import { ProjectsI } from '../Types/Project'
+import './MainPages.css'
 
 function MainPage() {
   const projectsDatas = useProjects()
@@ -12,7 +13,6 @@ function MainPage() {
       if (focusedCard === project.id) {
         setFocusedCard(-1)
       } else {
-
         setFocusedCard(project.id)
       }
     },
@@ -20,20 +20,19 @@ function MainPage() {
   )
   return (
     <>
-      {projectsDatas.map((value, index) => {
-        return (
-          <ProjectsSection
-            projects={value}
-            isFocused={value.id === focusedCard}
-            onClick={() => {
-              focusedACard(value)
-              console.log('toto')
-              console.log(value.id)
-              console.log(focusedCard)
-            }}
-          />
-        )
-      })}
+      <section id="projectSection">
+        {projectsDatas.map((value, index) => {
+          return (
+            <ProjectsSection
+              projects={value}
+              isFocused={value.id === focusedCard}
+              onClick={() => {
+                focusedACard(value)
+              }}
+            />
+          )
+        })}
+      </section>
     </>
   )
 }
