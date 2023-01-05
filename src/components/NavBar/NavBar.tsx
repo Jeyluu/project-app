@@ -1,12 +1,16 @@
 import { memo } from 'react'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   return (
     <nav>
       <ul>
-        <a href="/">
+        <Link to="/">
           <li>Project List</li>
-        </a>
+        </Link>
+        <Link to="/create-new-project">
+          <li>Create A project</li>
+        </Link>
       </ul>
     </nav>
   )
