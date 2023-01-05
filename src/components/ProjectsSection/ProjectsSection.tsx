@@ -22,26 +22,6 @@ function ProjectSection(props: ProjectsSectionI) {
           />
           <h2>{projects.projectName}</h2>
           <p>{projects.description}</p>
-          <div id="stateDiv">
-            <span
-              id="stateIndication"
-              style={{
-                backgroundColor:
-                  projects.state === 1
-                    ? 'orange'
-                    : projects.state === 2
-                    ? 'green'
-                    : 'red',
-              }}
-            ></span>
-            <h3>
-              {projects.state === 1
-                ? 'In Progress'
-                : projects.state === 2
-                ? 'Done'
-                : 'To be Done'}
-            </h3>
-          </div>
         </div>
       </>
     )
@@ -51,7 +31,6 @@ function ProjectSection(props: ProjectsSectionI) {
     projects.description,
     projects.img,
     projects.projectName,
-    projects.state,
   ])
 
   return <>{dataCard}</>

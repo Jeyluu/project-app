@@ -1,0 +1,11 @@
+#navbar-container {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+#navbar-container a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+}

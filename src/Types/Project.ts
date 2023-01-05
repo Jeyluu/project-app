@@ -1,14 +1,10 @@
-export enum ProjectState {
-    ToBeDone = 0,
-    InProgress,
-    Done
-}
 
-
-export interface ProjectsI{
-    id : number;
+export interface createProjectsI{
     projectName: string;
     description: string;
-    state: ProjectState;
     img: string;
+}
+
+export interface ProjectsI extends createProjectsI{
+    id : number;
 }
