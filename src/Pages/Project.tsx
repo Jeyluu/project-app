@@ -2,16 +2,15 @@ import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { createProject, getProject, updateProject } from '../Services/Project'
 import { CreateProjectsI, ProjectsI } from '../Types/Project'
-import './NewProject.css'
+import './Project.css'
 
 function Project() {
   const navigate = useNavigate()
   const [project, setProject] = useState<CreateProjectsI>({
     projectName: '',
     description: '',
-    img: '',
   })
-  const { projectName, description, img } = project
+  const { projectName, description } = project
   const { id } = useParams()
 
   useEffect(() => {
@@ -72,10 +71,11 @@ function Project() {
             name="description"
           />
         </div>
-        <div id="form-project-image" className="label-container">
+        {/* Have to study later on imlplementation of the image */}
+        {/* <div id="form-project-image" className="label-container">
           <label>Image</label>
           <input type="file" onChange={handleChange} value={img} name="img" />
-        </div>
+        </div> */}
         <button id="form-button">
           {id ? 'Mettre à jour le projet' : 'Créer le projet'}
         </button>

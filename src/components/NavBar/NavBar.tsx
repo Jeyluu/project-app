@@ -9,8 +9,8 @@ function NavBar() {
         <Link to="/">
           <li>Project List</li>
         </Link>
-        <Link to="/create-new-project">
-          <li>Create a project</li>
+        <Link to="/edit-project">
+          <li>Gestion des projets</li>
         </Link>
       </ul>
     </nav>

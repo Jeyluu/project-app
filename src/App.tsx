@@ -15,7 +15,7 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/create-new-project" element={<Project />} />
             <Route path="/edit-project" element={<ProjectManager />} />
-            <Route path="/edit-project" element={<Project />} />
+            <Route path="/edit-project/:id" element={<Project />} />
             <Route />
           </Routes>
         </BrowserRouter>
