@@ -1,10 +1,10 @@
 
-export interface createProjectsI{
+export interface CreateProjectsI{
     projectName: string;
     description: string;
     img: string;
 }
 
-export interface ProjectsI extends createProjectsI{
+export interface ProjectsI extends CreateProjectsI{
     id : number;
 }
