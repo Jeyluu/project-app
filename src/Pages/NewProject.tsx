@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createProjects } from '../Services/Project'
+import { createProject } from '../Services/Project'
 import { CreateProjectsI } from '../Types/Project'
 import './NewProject.css'
 
@@ -30,7 +30,7 @@ function NewProject() {
       event.preventDefault()
       console.log(project)
 
-      createProjects(project).then(() => navigate('/'))
+      createProject(project).then(() => navigate('/'))
     },
     [navigate, project],
   )
