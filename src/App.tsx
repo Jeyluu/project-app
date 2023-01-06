@@ -2,7 +2,8 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import MainPage from './Pages/MainPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import NewProject from './Pages/NewProject'
+import ProjectManager from './Pages/ProjectManager/ProjectManager'
+import Project from './Pages/Project'
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/create-new-project" element={<NewProject />} />
+            <Route path="/create-new-project" element={<Project />} />
+            <Route path="/edit-project" element={<ProjectManager />} />
+            <Route path="/edit-project" element={<Project />} />
             <Route />
           </Routes>
         </BrowserRouter>

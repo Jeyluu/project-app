@@ -1,10 +1,10 @@
-import { ChangeEvent, FormEvent, useCallback, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { createProject } from '../Services/Project'
-import { CreateProjectsI } from '../Types/Project'
+import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { createProject, getProject, updateProject } from '../Services/Project'
+import { CreateProjectsI, ProjectsI } from '../Types/Project'
 import './NewProject.css'
 
-function NewProject() {
+function Project() {
   const navigate = useNavigate()
   const [project, setProject] = useState<CreateProjectsI>({
     projectName: '',
@@ -12,6 +12,15 @@ function NewProject() {
     img: '',
   })
   const { projectName, description, img } = project
+  const { id } = useParams()
+
+  useEffect(() => {
+    if (id !== undefined) {
+      getProject(Number(id)).then((project) => {
+        setProject(project)
+      })
+    }
+  }, [id])
 
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,16 +37,22 @@ function NewProject() {
   const handleSubmit = useCallback(
     (event: FormEvent) => {
       event.preventDefault()
-      console.log(project)
-
-      createProject(project).then(() => navigate('/'))
+      if (id !== undefined) {
+        updateProject(project as ProjectsI).then(() => navigate('/'))
+      } else {
+        createProject(project).then(() => navigate('/'))
+      }
     },
-    [navigate, project],
+    [id, navigate, project],
   )
 
   return (
     <section id="new-project-section">
-      <h1>Ajout d'un nouveau projet à la bibliothèque</h1>
+      <h1>
+        {id
+          ? 'Mise à jour du projet'
+          : 'Ajout du nouveau projet à la bibliothèque'}
+      </h1>
       <form id="creation-form" onSubmit={handleSubmit}>
         <div id="form-project-name" className="label-container">
           <label>Nom du projet</label>
@@ -61,10 +76,12 @@ function NewProject() {
           <label>Image</label>
           <input type="file" onChange={handleChange} value={img} name="img" />
         </div>
-        <button id="form-button">Enregistrer le projet</button>
+        <button id="form-button">
+          {id ? 'Mettre à jour le projet' : 'Créer le projet'}
+        </button>
       </form>
     </section>
   )
 }
 
-export default NewProject
+export default Project
