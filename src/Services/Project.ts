@@ -27,3 +27,9 @@ export function updateProject(project: ProjectsI) : Promise<ProjectsI> {
         body: JSON.stringify(project)
     }).then((response) => response.json())
 }
+export function deleteProject(id:number) : Promise<ProjectsI> {
+    return fetch(`http://localhost:3500/projects/${id}`, {
+        method:"DELETE",
+        
+    }).then((response) => response.json())
+}

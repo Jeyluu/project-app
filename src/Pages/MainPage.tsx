@@ -24,6 +24,7 @@ function MainPage() {
         {projectsDatas.map((value, index) => {
           return (
             <ProjectsSection
+            key={index}
               projects={value}
               isFocused={value.id === focusedCard}
               onClick={() => {

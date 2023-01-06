@@ -1,0 +1,9 @@
+#project-management-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#delete-project-button {
+  background-color: transparent;
+}
