@@ -1,4 +1,11 @@
-#projectSection {
+#introduction-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+}
+
+#project-section {
+  margin: 40px;
   position: relative;
   display: flex;
   justify-content: space-around;

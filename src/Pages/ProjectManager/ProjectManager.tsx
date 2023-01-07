@@ -3,8 +3,7 @@ import { useProjects } from '../../Hooks/useProjects'
 import './ProjectManager.css'
 import DeleteIcon from '../../Assets/Icons/crossDeleteIcon.png'
 import { deleteProject } from '../../Services/Project'
-import { useState } from 'react'
-import { ProjectsI } from '../../Types/Project'
+
 
 function ProjectManager() {
   const projectsList = useProjects()

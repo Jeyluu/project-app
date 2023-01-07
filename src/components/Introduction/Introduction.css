@@ -1,0 +1,32 @@
+#presentation-img {
+  width: 500px;
+  border-radius: 2px;
+  animation: 2s ease-in popin-img;
+}
+
+@keyframes popin-img {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#description-bloc {
+  animation: 2s ease-in popin-description;
+}
+@keyframes popin-description {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  60% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

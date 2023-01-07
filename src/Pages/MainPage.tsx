@@ -1,4 +1,5 @@
 import { memo, useCallback, useState } from 'react'
+import Introduction from '../components/Introduction/Introduction'
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import { useProjects } from '../Hooks/useProjects'
 import { ProjectsI } from '../Types/Project'
@@ -20,11 +21,12 @@ function MainPage() {
   )
   return (
     <>
-      <section id="projectSection">
+      <section id="introduction-section"><Introduction /></section>
+      <section id="project-section">
         {projectsDatas.map((value, index) => {
           return (
             <ProjectsSection
-            key={index}
+              key={index}
               projects={value}
               isFocused={value.id === focusedCard}
               onClick={() => {
