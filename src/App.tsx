@@ -4,8 +4,12 @@ import MainPage from './Pages/MainPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProjectManager from './Pages/ProjectManager/ProjectManager'
 import Project from './Pages/Project'
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    
+  }, [])
   return (
     <div className="App">
       <header className="App-header">

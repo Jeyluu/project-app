@@ -1,10 +1,17 @@
 import FakeImage from '../../Assets/Images/FakeProject.png'
 import './Introduction.css'
 
+
+
 function Introduction() {
+
   return (
     <>
-      <img id="presentation-img" src={FakeImage} alt="FakeImg" />
+      <div id="img-container">
+        <img id="presentation-img" src={FakeImage} alt="FakeImg" />
+        
+      </div>
+
       <div id="description-bloc">
         <h1>Présentation</h1>
         <p>

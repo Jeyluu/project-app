@@ -21,7 +21,9 @@ function MainPage() {
   )
   return (
     <>
-      <section id="introduction-section"><Introduction /></section>
+      <section id="introduction-section">
+        <Introduction />
+      </section>
       <section id="project-section">
         {projectsDatas.map((value, index) => {
           return (
