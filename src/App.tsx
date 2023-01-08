@@ -5,11 +5,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProjectManager from './Pages/ProjectManager/ProjectManager'
 import Project from './Pages/Project'
 import { useEffect } from 'react'
+import Footer from './components/Footer/Footer'
 
 function App() {
-  useEffect(() => {
-    
-  }, [])
+  useEffect(() => {}, [])
   return (
     <div className="App">
       <header className="App-header">
@@ -22,6 +21,7 @@ function App() {
             <Route path="/edit-project/:id" element={<Project />} />
             <Route />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </header>
     </div>
