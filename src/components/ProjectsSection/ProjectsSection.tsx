@@ -14,15 +14,17 @@ function ProjectSection(props: ProjectsSectionI) {
 
   const dataCard = useMemo(() => {
     return (
-      <>
-        <div className={isFocused ? 'card-focus' : 'card'} onClick={onClick}>
-          <img src={logo} alt={`un-logo`} />
-          <div id={isFocused ? 'project-info-focus' : 'card'}>
-            <h2>{projects.projectName}</h2>
-            <p>{projects.description}</p>
-          </div>
+      <div
+        id="card-border"
+        className={isFocused ? 'card-focus' : 'card'}
+        onClick={onClick}
+      >
+        <img src={logo} alt={`un-logo`} />
+        <div id={isFocused ? 'project-info-focus' : 'card'}>
+          <h2>{projects.projectName}</h2>
+          <p>{projects.description}</p>
         </div>
-      </>
+      </div>
     )
   }, [isFocused, onClick, projects.description, projects.projectName])
 

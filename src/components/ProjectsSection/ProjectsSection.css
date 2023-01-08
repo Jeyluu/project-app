@@ -6,10 +6,6 @@
   background-color: #27272762;
 }
 
-#notexisting {
-  color: #00000070;
-}
-
 .card-focus {
   width: 20%;
   margin: 10px;
@@ -28,4 +24,12 @@
   background-color: #210291;
   border-radius: 2px;
   transition: all 200ms linear;
+}
+
+#card-border h2::after {
+  display: block;
+  content: ' ';
+  background-color: #210291;
+  height: 2px;
+  width: 150px;
 }
