@@ -17,8 +17,10 @@ function ProjectSection(props: ProjectsSectionI) {
       <>
         <div className={isFocused ? 'card-focus' : 'card'} onClick={onClick}>
           <img src={logo} alt={`un-logo`} />
-          <h2>{projects.projectName}</h2>
-          <p>{projects.description}</p>
+          <div id={isFocused ? 'project-info-focus' : 'card'}>
+            <h2>{projects.projectName}</h2>
+            <p>{projects.description}</p>
+          </div>
         </div>
       </>
     )
