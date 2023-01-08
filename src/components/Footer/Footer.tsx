@@ -14,7 +14,12 @@ function Footer() {
           <img className="link-icon" src={LinkedIn} alt="LinkedIn" />
         </a>
         <a href="https://github.com/Jeyluu" target={'blank'}>
-          <img className="link-icon" src={Github} alt="Github" />
+          <img
+            id="github-icon"
+            className="link-icon"
+            src={Github}
+            alt="Github"
+          />
         </a>
       </div>
     </footer>

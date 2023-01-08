@@ -14,8 +14,5 @@
 .link-icon {
   height: 40px;
   width: 40px;
-}
-
-.link-icon:first-child {
-  margin: 20px;
+  margin-right: 20px;
 }

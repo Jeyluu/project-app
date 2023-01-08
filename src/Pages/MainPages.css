@@ -5,8 +5,11 @@
 }
 
 #project-section {
+  background-color: black;
   margin: 40px;
   position: relative;
   display: flex;
   justify-content: space-around;
+  box-shadow: -20px 20px rgba(0, 0, 0, 0.418);
+
 }
