@@ -32,37 +32,18 @@ function MainPage() {
         <Introduction />
       </section>
       <section id="project-section">
-        <Swiper
-          grabCursor={true}
-          effect={'creative'}
-          creativeEffect={{
-            prev: {
-              shadow: true,
-              translate: ['-120%', 0, -500],
-            },
-            next: {
-              shadow: true,
-              translate: ['120%', 0, -500],
-            },
-          }}
-          modules={[EffectCreative]}
-          className="mySwiper2"
-        >
-          {projectsDatas.map((value, index) => {
-            return (
-              <SwiperSlide>
-                <ProjectsSection
-                  key={index}
-                  projects={value}
-                  isFocused={value.id === focusedCard}
-                  onClick={() => {
-                    focusedACard(value)
-                  }}
-                />
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
+        {projectsDatas.map((value, index) => {
+          return (
+            <ProjectsSection
+              key={index}
+              projects={value}
+              isFocused={value.id === focusedCard}
+              onClick={() => {
+                focusedACard(value)
+              }}
+            />
+          )
+        })}
       </section>
     </>
   )
