@@ -3,6 +3,13 @@ import Introduction from '../components/Introduction/Introduction'
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import { useProjects } from '../Hooks/useProjects'
 import { ProjectsI } from '../Types/Project'
+// Swiper-react import
+import { Swiper, SwiperSlide } from 'swiper/react'
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/effect-creative'
+// import required modules
+import { EffectCreative } from 'swiper'
 import './MainPages.css'
 
 function MainPage() {
@@ -25,18 +32,37 @@ function MainPage() {
         <Introduction />
       </section>
       <section id="project-section">
-        {projectsDatas.map((value, index) => {
-          return (
-            <ProjectsSection
-              key={index}
-              projects={value}
-              isFocused={value.id === focusedCard}
-              onClick={() => {
-                focusedACard(value)
-              }}
-            />
-          )
-        })}
+        <Swiper
+          grabCursor={true}
+          effect={'creative'}
+          creativeEffect={{
+            prev: {
+              shadow: true,
+              translate: ['-120%', 0, -500],
+            },
+            next: {
+              shadow: true,
+              translate: ['120%', 0, -500],
+            },
+          }}
+          modules={[EffectCreative]}
+          className="mySwiper2"
+        >
+          {projectsDatas.map((value, index) => {
+            return (
+              <SwiperSlide>
+                <ProjectsSection
+                  key={index}
+                  projects={value}
+                  isFocused={value.id === focusedCard}
+                  onClick={() => {
+                    focusedACard(value)
+                  }}
+                />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
       </section>
     </>
   )
