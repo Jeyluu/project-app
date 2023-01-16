@@ -3,13 +3,7 @@ import Introduction from '../components/Introduction/Introduction'
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import { useProjects } from '../Hooks/useProjects'
 import { ProjectsI } from '../Types/Project'
-// Swiper-react import
-import { Swiper, SwiperSlide } from 'swiper/react'
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-creative'
-// import required modules
-import { EffectCreative } from 'swiper'
+
 import './MainPages.css'
 
 function MainPage() {
