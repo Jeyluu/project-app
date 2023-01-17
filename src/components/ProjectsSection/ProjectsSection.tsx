@@ -3,6 +3,7 @@ import { ProjectsI } from '../../Types/Project'
 import logo from '../../Assets/logo.svg'
 import './ProjectsSection.css'
 
+
 interface ProjectsSectionI {
   projects: ProjectsI
   isFocused: boolean

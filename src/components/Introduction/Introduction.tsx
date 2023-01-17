@@ -1,4 +1,6 @@
 import FakeImage from '../../Assets/Images/FakeProject.png'
+
+
 import './Introduction.css'
 
 function Introduction() {
@@ -16,6 +18,7 @@ function Introduction() {
           d'apprendre. Je continu à me développer de jour en jour.
         </p>
       </div>
+      
     </>
   )
 }

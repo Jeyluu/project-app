@@ -6,12 +6,14 @@ import ProjectManager from './Pages/ProjectManager/ProjectManager'
 import Project from './Pages/Project'
 import { useEffect } from 'react'
 import Footer from './components/Footer/Footer'
+import ParticlesComponent from './components/Particles/Particles'
 
 function App() {
   useEffect(() => {}, [])
   return (
     <div className="App">
       <header className="App-header">
+        <ParticlesComponent />
         <BrowserRouter>
           <NavBar />
           <Routes>
