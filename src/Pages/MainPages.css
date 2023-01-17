@@ -6,11 +6,11 @@
 }
 
 #project-section {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.911);
   margin: 40px;
   position: relative;
   display: flex;
   justify-content: space-around;
   box-shadow: -20px 20px rgba(0, 0, 0, 0.418);
-  height: 46vh;
+  height: 42vh;
 }

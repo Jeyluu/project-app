@@ -1,6 +1,5 @@
 import FakeImage from '../../Assets/Images/FakeProject.png'
 
-
 import './Introduction.css'
 
 function Introduction() {
@@ -13,12 +12,11 @@ function Introduction() {
       <div id="description-bloc">
         <h1>Présentation</h1>
         <p>
-          Hello, je suis Jérémy et je suis développeur logiciel front-end depuis
-          1 an. Je suis un passionné de technologies,très curieux et soif
-          d'apprendre. Je continu à me développer de jour en jour.
+          Hello, je suis Jérémy et je suis développeur logiciel front-end. Je
+          suis un passionné de technologies,très curieux et soif d'apprendre. Je
+          continu à me développer de jour en jour.
         </p>
       </div>
-      
     </>
   )
 }

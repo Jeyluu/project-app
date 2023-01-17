@@ -9,6 +9,11 @@ body {
   background-color: #282c34;
   color: #fff;
 }
+h1,
+h2,
+h3 {
+  font-family: 'Saira Condensed', sans-serif;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
