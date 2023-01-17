@@ -1,5 +1,5 @@
 #footer {
-  position: relative;
+  position: sticky;
   background-color: #5920cbf5;
   width: 100%;
   display: flex;
