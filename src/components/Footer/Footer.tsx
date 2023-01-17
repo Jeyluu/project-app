@@ -1,35 +1,41 @@
+import { useMemo } from 'react'
 import './Footer.css'
-import LinkedIn from '../../Assets/Icons/linkedin.png'
-import Github from '../../Assets/Icons/github.png'
+
+export interface Icon {
+  alt: string
+  link: string
+  icon: string
+}
 
 interface FooterProps {
   filigrane?: string
-  mainSentence: string
-  icons: string[]
+  copyright: string
+  icons: Icon[]
 }
 
-function Footer() {
+function Footer(props: FooterProps) {
+  const { filigrane, copyright, icons } = props
+
+
+
+  const iconMap = useMemo(() => {
+    return (
+      <>
+        {icons.map((value, index) => {
+          return (
+            <a href={value.link} target={'blank'} key={index}>
+              <img className="link-icon" src={value.icon} alt={value.alt} />
+            </a>
+          )
+        })}
+      </>
+    )
+  }, [icons])
   return (
     <footer id="footer">
-      <h1>CONTACT</h1>
-
-      <div id="icon-container">
-        <a
-          href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-luu-820419124/"
-          target={'blank'}
-        >
-          <img className="link-icon" src={LinkedIn} alt="LinkedIn" />
-        </a>
-        <a href="https://github.com/Jeyluu" target={'blank'}>
-          <img
-            id="github-icon"
-            className="link-icon"
-            src={Github}
-            alt="Github"
-          />
-        </a>
-      </div>
-      <p>2023 Jérémy Luu - Développeur Front-End</p>
+      <h1>{filigrane}</h1>
+      <div id="icon-container">{iconMap}</div>
+      <p>{copyright}</p>
     </footer>
   )
 }

@@ -9,4 +9,11 @@
   text-decoration: none;
   color: #fff;
   font-family: 'Nunito', sans-serif;
+  text-shadow: 0 0 0 rgb(255, 0, 0), 0 0 0 rgb(0, 255, 0), 0 0 0 rgb(0, 0, 255);
+}
+
+#navbar-container a:hover {
+  text-shadow: 0.3px -0.1px 0.1px rgb(255, 0, 0), 0.2px 0.1px 0 rgb(0, 255, 0),
+    -0.1px 0.2px 0 rgb(0, 0, 255);
+  transition: 0.2s cubic-bezier(0.5, 200, 0.5, -200);
 }
