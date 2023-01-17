@@ -1,5 +1,6 @@
 #introduction-section {
   position: relative;
+  background-color: rgb(68, 67, 64);
   display: flex;
   justify-content: space-around;
   margin: 40px;

@@ -13,11 +13,10 @@
   }
 }
 
-#description-bloc {
-  animation: 2s ease-in popin-description;
-  padding: 20px;
-  border: 1px solid chartreuse;
+#img-container {
+  padding: 10px;
 }
+
 @keyframes popin-description {
   0% {
     display: none;
