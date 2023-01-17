@@ -35,3 +35,8 @@
     border: 1px solid chartreuse;
   }
 }
+
+#description-bloc p {
+  display: flex;
+  flex-direction: column;
+}
