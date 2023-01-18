@@ -1,13 +1,17 @@
-import FakeImage from '../../Assets/Images/FakeProject.png'
-
 import './Introduction.css'
 
-function Introduction() {
+interface IntroductionProps {
+  img: string
+}
+
+function Introduction(props: IntroductionProps) {
+  const { img } = props
+
   return (
     <div id="intro-container">
       <div id="description-container">
         <div id="img-container">
-          <img id="presentation-img" src={FakeImage} alt="FakeImg" />
+          <img id="presentation-img" src={img} alt="FakeImg" />
         </div>
 
         <div id="description-bloc">
@@ -20,21 +24,6 @@ function Introduction() {
               continu à me développer de jour en jour.
             </span>
           </p>
-        </div>
-      </div>
-
-      <div id="stack">
-
-          <ul id="stack-list">
-            <li>Html</li>
-            <li>Css</li>
-            <li>Javascript</li>
-          </ul>
-
-        <div id="stack-container">
-          <span className="stack-square"></span>
-          <span className="stack-square"></span>
-          <span className="stack-square"></span>
         </div>
       </div>
     </div>

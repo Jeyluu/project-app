@@ -6,8 +6,10 @@ import { useProjects } from '../Hooks/useProjects'
 import { ProjectsI } from '../Types/Project'
 import LinkedIn from '../Assets/Icons/linkedin.png'
 import Github from '../Assets/Icons/github.png'
+import FakeImage from '../Assets/Images/FakeProject.png'
 
 import './MainPages.css'
+import Stack, { StackI } from '../components/Stack/Stack'
 
 const footerIcon = [
   {
@@ -22,11 +24,19 @@ const footerIcon = [
   },
 ]
 
+const stack = [
+  { id: 1, name: 'html' },
+  { id: 2, name: 'css' },
+  { id: 3, name: 'js' },
+  { id: 4, name: 'React' },
+]
+
 const copyRight = 'contact'
 
 function MainPage() {
   const projectsDatas = useProjects()
   const [focusedCard, setFocusedCard] = useState<number>(-1)
+  const [clicked, setClicked] = useState<number>(-1)
 
   const copyRightStyle = useMemo(() => {
     return copyRight.toUpperCase()
@@ -42,10 +52,24 @@ function MainPage() {
     },
     [focusedCard],
   )
+  const click = useCallback((stack: StackI) => {
+    setClicked(stack.id)
+  }, [])
   return (
     <>
       <section id="introduction-section">
-        <Introduction />
+        <Introduction img={FakeImage} />
+      </section>
+      <section id="stack-section">
+        {stack.map((value, index) => {
+          return (
+            <Stack
+              stacks={value}
+              focusedStack={value.id === clicked}
+              onClick={click}
+            />
+          )
+        })}
       </section>
       <section id="project-section">
         {projectsDatas.map((value, index) => {
