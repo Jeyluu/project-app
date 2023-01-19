@@ -37,7 +37,7 @@ const copyRight = 'contact'
 function MainPage() {
   const projectsDatas = useProjects()
   const [focusedCard, setFocusedCard] = useState<number>(-1)
-  const [clicked, setClicked] = useState<number>(-1)
+  const [clicked, setClicked] = useState(-1)
 
   const copyRightStyle = useMemo(() => {
     return copyRight.toUpperCase()
@@ -55,6 +55,7 @@ function MainPage() {
   )
   const click = useCallback((stack: StackI) => {
     setClicked(stack.id)
+    console.log(stack.id)
   }, [])
   return (
     <>
@@ -62,7 +63,7 @@ function MainPage() {
         <Introduction img={FakeImage} />
       </section>
       <section id="stack-section">
-        <div id="stack-name">
+        <ul id="stack-name">
           {stack.map((value, index) => {
             return (
               <Stack
@@ -72,10 +73,10 @@ function MainPage() {
               />
             )
           })}
-        </div>
+        </ul>
         <div id="stack-graph">
           <StackGraph
-            focusedStackGraph={false}
+            focusedStackGraph={true}
             onClick={() => console.log('click')}
           />
         </div>

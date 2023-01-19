@@ -12,10 +12,14 @@ interface StackProps {
 }
 
 function Stack(props: StackProps) {
-  const { stacks, focusedStack } = props
+  const { stacks, focusedStack, onClick } = props
+  
   return (
     <>
-      <li className={focusedStack ? 'focused-stack-name' : 'stack-name'}>
+      <li
+        onClick={() => onClick(stacks)}
+        className={focusedStack ? 'focused-stack-line' : 'stack-line'}
+      >
         {stacks.name}
       </li>
     </>
