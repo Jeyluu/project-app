@@ -10,6 +10,7 @@ import FakeImage from '../Assets/Images/FakeProject.png'
 
 import './MainPages.css'
 import Stack, { StackI } from '../components/Stack/Stack'
+import StackGraph from '../components/StackGraph/StackGraph'
 
 const footerIcon = [
   {
@@ -61,15 +62,23 @@ function MainPage() {
         <Introduction img={FakeImage} />
       </section>
       <section id="stack-section">
-        {stack.map((value, index) => {
-          return (
-            <Stack
-              stacks={value}
-              focusedStack={value.id === clicked}
-              onClick={click}
-            />
-          )
-        })}
+        <div id="stack-name">
+          {stack.map((value, index) => {
+            return (
+              <Stack
+                stacks={value}
+                focusedStack={value.id === clicked}
+                onClick={click}
+              />
+            )
+          })}
+        </div>
+        <div id="stack-graph">
+          <StackGraph
+            focusedStackGraph={false}
+            onClick={() => console.log('click')}
+          />
+        </div>
       </section>
       <section id="project-section">
         {projectsDatas.map((value, index) => {
