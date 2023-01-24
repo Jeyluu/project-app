@@ -1,6 +1,6 @@
 .stack-line {
 }
 
-.focused-stack-line {
+.stack-line:hover {
   background-color: red;
 }

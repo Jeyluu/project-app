@@ -7,21 +7,14 @@ export interface StackI {
 
 interface StackProps {
   stacks: StackI
-  focusedStack: boolean
-  onClick: (stack: StackI) => void
 }
 
 function Stack(props: StackProps) {
-  const { stacks, focusedStack, onClick } = props
-  
+  const { stacks } = props
+
   return (
     <>
-      <li
-        onClick={() => onClick(stacks)}
-        className={focusedStack ? 'focused-stack-line' : 'stack-line'}
-      >
-        {stacks.name}
-      </li>
+      <li className={'stack-line'}>{stacks.name}</li>
     </>
   )
 }
