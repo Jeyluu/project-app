@@ -67,13 +67,13 @@ function MainPage() {
   const backgroundChanger = useMemo(() => {
     switch (id) {
       case 1:
-        return 'red'
+        return 'rgba(82, 0, 182, 0.8)'
       case 2:
-        return 'blue'
+        return 'rgba(255, 0, 0, 0.8)'
       case 3:
-        return 'green'
+        return 'rgba(1, 142, 8, 0.8)'
       case 4:
-        return 'yellow'
+        return 'rgba(37, 83, 247, 0.8)'
 
       default:
         return 'rgba(134, 134, 134, 0.616)'
