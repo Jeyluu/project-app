@@ -9,8 +9,8 @@ export interface StackProps {
   stacks: StackI
   hover: boolean
   backgroundColor: string
-  onMouseEnter: (id: number) => void
-  onMouseLeave: (id: number) => void
+  onMouseEnter: () => void
+  onMouseLeave: () => void
 }
 
 function Stack(props: StackProps) {
@@ -18,10 +18,13 @@ function Stack(props: StackProps) {
   return (
     <>
       <li
-        className={'stack-line'}
-        onMouseEnter={() => onMouseEnter(stacks.id)}
-        onMouseLeave={() => onMouseLeave(stacks.id)}
-        style={{ backgroundColor: hover ? backgroundColor : '' }}
+        className={hover ? 'stack-line-hover' : 'stack-line'}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={{
+          backgroundColor: hover ? backgroundColor : '',
+          borderLeft: hover ? `5px solid ${backgroundColor}` : `5px solid`,
+        }}
       >
         {stacks.name}
       </li>

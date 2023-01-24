@@ -1,2 +1,9 @@
 .stack-line {
+  margin: 5px;
+  padding: 5px;
+}
+
+.stack-line-hover {
+  padding: 15px;
+  transition: all linear 0.2s;
 }
