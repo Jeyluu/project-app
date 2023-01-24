@@ -1,26 +1,26 @@
 import './StackGraph.css'
 
 interface StackGraphProps {
-  focusedStackGraph: boolean
-  onClick: () => void
+  hover: boolean
+  backgroundColor: string
+  onMouseEnter: () => void
+  onMouseLeave: () => void
 }
 
 function StackGraph(props: StackGraphProps) {
-  const { focusedStackGraph } = props
+  const { hover, backgroundColor, onMouseEnter, onMouseLeave } = props
 
   return (
     <>
       <span
-        className={focusedStackGraph ? 'focused-stack-square' : 'stack-square'}
-      ></span>
-      <span
-        className={focusedStackGraph ? 'focused-stack-square' : 'stack-square'}
-      ></span>
-      <span
-        className={focusedStackGraph ? 'focused-stack-square' : 'stack-square'}
-      ></span>
-      <span
-        className={focusedStackGraph ? 'focused-stack-square' : 'stack-square'}
+        className={'stack-square'}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={{
+          backgroundColor: hover
+            ? backgroundColor
+            : 'rgba(134, 134, 134, 0.616)',
+        }}
       ></span>
     </>
   )
