@@ -17,11 +17,11 @@ function Introduction(props: IntroductionProps) {
         <div id="description-bloc">
           <h1>Présentation</h1>
           <p>
-            Hello,
+            Hello, je suis Jérémy
             <span>
-              Je suis Jérémy et je suis développeur logiciel front-end. Je suis
-              un passionné de technologies,très curieux et soif d'apprendre. Je
-              continu à me développer de jour en jour.
+              Passionné, perseverant, un peu geek(beaucoup?). J'ai réalisé une
+              reconversion professionnelle dans le web il y a maintenant 2ans.
+              Attentif et rigoureux, je saurais m'adapter à tous vos projets ;)
             </span>
           </p>
         </div>
