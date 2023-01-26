@@ -71,11 +71,7 @@ function Project() {
             name="description"
           />
         </div>
-        {/* Have to study later on imlplementation of the image */}
-        {/* <div id="form-project-image" className="label-container">
-          <label>Image</label>
-          <input type="file" onChange={handleChange} value={img} name="img" />
-        </div> */}
+
         <button id="form-button">
           {id ? 'Mettre à jour le projet' : 'Créer le projet'}
         </button>

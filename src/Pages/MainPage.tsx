@@ -126,6 +126,7 @@ function MainPage() {
           )
         })}
       </section>
+      <section id="carousel-test"></section>
       <Footer
         filigrane={copyRightStyle}
         copyright={'2023 Jérémy Luu - Développeur Front-End'}
